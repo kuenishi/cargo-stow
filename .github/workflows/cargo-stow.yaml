@@ -43,7 +43,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./cargo-stow/examples/greeter
+        working-directory: ./examples/greeter
     runs-on: ubuntu-latest
     needs: test-build
     steps:
