@@ -1,0 +1,31 @@
+[package]
+name = "cargo-stow"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+anyhow = "*"
+log = "*"
+env_logger = "*"
+### cargo = "*"
+serde = { version = "*", features = ["derive"]}
+toml = "*"
+tinytemplate = "*"
+tempfile = "*"
+clap = { version = "*", features = ["derive"]}
+clap-cargo = "*"
+
+[features]
+docker = []
+youki = []
+
+[package.metadata.container]
+# All built binaries to be installed in /usr/bin
+target_image = "registry.example.org/some/image"
+# Defines base container image name where the build starts on
+# Supported base images: ubuntu (and others in near future?)
+base_image = "ubuntu"
+# Define packages needed for build, e.g. headers, except rustup and cargo
+build_deps = ["emacs-nox", "libssl-dev"]
+# Define packages needed in runtime, e.g. libraries
+runtime_deps = ["emacs-nox", "libssl3t64"]
