@@ -11,16 +11,15 @@ keyword = ["cargo", "container", "container-images"]
 
 
 [dependencies]
-anyhow = "*"
-log = "*"
-env_logger = "*"
+anyhow = "1"
+log = "0.4"
+env_logger = "0.11"
 ### cargo = "*"
-serde = { version = "*", features = ["derive"]}
-toml = "*"
-tinytemplate = "*"
-tempfile = "*"
-clap = { version = "*", features = ["derive"]}
-clap-cargo = "*"
+serde = { version = "1", features = ["derive"]}
+toml = "0.9"
+tinytemplate = "1"
+tempfile = "3"
+clap = { version = "4.5", features = ["derive"]}
 
 [features]
 docker = []
