@@ -2,6 +2,13 @@
 name = "cargo-stow"
 version = "0.0.1"
 edition = "2024"
+description = "OCI-compatible container builder out of the box"
+readme = "README.md"
+repository = "https://github.com/kuenishi/cargo-stow"
+license = "MIT"
+license-file = "LICENSE"
+keyword = ["cargo", "container", "container-images"]
+
 
 [dependencies]
 anyhow = "*"
