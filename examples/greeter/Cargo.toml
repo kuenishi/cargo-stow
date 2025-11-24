@@ -1,0 +1,17 @@
+[package]
+name = "greeter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[package.metadata.container]
+# All built binaries to be installed in /usr/bin
+target_image = "registry.example.org/directory/greeter:latest"
+# Defines base container image name where the build starts on
+# Supported base images: ubuntu (and others in near future?)
+base_image = "ubuntu"
+# Define packages needed for build, e.g. headers, except rustup and cargo
+build_deps = ["libssl-dev"]
+# Define packages needed in runtime, e.g. libraries
+runtime_deps = ["libssl3t64"]
