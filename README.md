@@ -30,10 +30,10 @@ crate is correctly designed.
 Some notes:
 - This project is not related to GNU Stow. When I hit on the name
   cargo-stow, I didn't even know it.
-- `cargo-chef` project has some part common with this project,
-  especitally in the domain of building container images in Rust. For
+- `cargo-chef` project has some concept in common with this project,
+  especially in the domain of building container images in Rust. For
   example, cache optimization and such.
-- In some day, I want to make this tool purly hosted with Rust. But to
+- Some day, I want to make this tool purly hosted with Rust. But to
   prove my idea of simplifying build process, I dared to use Docker as
   it is the most common tool.
 - This project is strongly inspired by [Ko](https://ko.build/).
