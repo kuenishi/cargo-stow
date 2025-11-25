@@ -2,10 +2,10 @@
 
 In the era of containers and microservices, we often build a
 single-featured container image that just runs one executable as an
-entrypoint. We just want to stow a binary executable onto a container
-layer. We don't need complex assets, pre-built libraries with complex
-build scripts and configs, which just requires a single binary
-`/usr/bin/your-executable` written in Rust.  We don't want to write
+entrypoint. We don't need complex assets, pre-built libraries with
+complex build scripts and configs. We just want to stow a binary
+executable onto a container layer, which just requires a single binary
+`/usr/bin/your-executable` written in Rust. We don't want to write
 Dockerfile just for it, copying a plain Dockerfile just copied from
 some random other Rust binary crate a few seconds ago.
 
