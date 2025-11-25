@@ -1,24 +1,25 @@
 # Containers in Rust: no more Dockerfile
 
 In the era of containers and microservices, we often build a
-single-feature container image that just runs one executable as an
+single-featured container image that just runs one executable as an
 entrypoint. We just want to stow a binary executable onto a container
 layer. We don't need complex assets, pre-built libraries with complex
 build scripts and configs, which just requires a single binary
 `/usr/bin/your-executable` written in Rust.  We don't want to write
-Dockerfile just for it, copying a plain Dockerfile just copied by some
-random other Rust binary crate.
+Dockerfile just for it, copying a plain Dockerfile just copied from
+some random other Rust binary crate a few seconds ago.
 
 Another burden is that we have to take the difference between the
 build environment and the runtime image into consideration. We don't
 need headers, protoc command, but we just need dynamic libraries and
-some assets. Even configuration files will always be injected by a
-container orchestrator. We often use `rust` image for build and
-`debian-slim` for runtime. But they do often have _difference_ in
-library versions and ABIs and other version dependencies. So, the
-build system and the runtime system should stem from the same base
-container image. The same-base-image rule should be forced, because we
-usually don't mind or get noticed when the gap happens..
+some assets and build deps had better stripped off from runtime. Even
+static configuration files will always be injected by a container
+orchestrator. We often use `rust` image for build and `debian-slim`
+for runtime. But they do often have _difference_ in library versions
+and ABIs and some other random trivial stuff. So, the build system and
+the runtime system should stem from the same base container image. The
+same-base-image rule should be forced, because we usually don't mind
+or get noticed when the gap happens.
 
 Rather, we just add a single section in `Cargo.toml` manifest named
 `[package.metadata.container]` that describes container image name
@@ -35,6 +36,7 @@ Some notes:
 - In some day, I want to make this tool purly hosted with Rust. But to
   prove my idea of simplifying build process, I dared to use Docker as
   it is the most common tool.
+- This project is strongly inspired by [Ko](https://ko.build/).
 
 ## Install and Prerequisites
 
