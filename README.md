@@ -23,7 +23,7 @@ or get noticed when the gap happens.
 
 Rather, we just add a single section in `Cargo.toml` manifest named
 `[package.metadata.container]` that describes container image name
-and, by a single subcommand `cargo stow build` , we obtaing a cleanly
+and, by a single subcommand `cargo stow build` , we obtain a cleanly
 built container image. That won't bother us any more as long as this
 crate is correctly designed.
 
